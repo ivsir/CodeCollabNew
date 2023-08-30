@@ -188,6 +188,8 @@ function Comments({ projectId }) {
       <div className="comment__ctn">
         <h1 className="comment__title">Comments</h1>
         <h2 className="comment__disc">Join this discussion</h2>
+        {/* <div>{location.state.memberId}</div>
+      <div>{location.state.projectId}</div> */}
         <div>{renderComments()}</div>
         <form className="comment__form" onSubmit={handleSubmit}>
           <div className="comment__form-ctn">
@@ -212,3 +214,5 @@ function Comments({ projectId }) {
   );
 }
 export default Comments;
+
+// "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiY29vbEBjb29sLmNvbSIsInVzZXJuYW1lIjoiY29vbCIsIl9pZCI6IjY0MTdiYTJhNzBmZDU1NTk3YTIyZWIzMSJ9LCJpYXQiOjE2Nzk0MjM5MjQsImV4cCI6MTY3OTQzMTEyNH0.Pc1ma5n2L0XW_psnepFzPtgDKx3ONANuBsQX1A2xhiw"

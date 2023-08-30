@@ -16,6 +16,7 @@ const resolvers = {
       return Project.find(params).sort({ createdAt: -1 });
     },
     project: async (parent, { projectId }) => {
+      console.log(projectId);
       return Project.findOne({ _id: projectId });
     },
     me: async (parent, args, context) => {
@@ -50,6 +51,7 @@ const resolvers = {
 
       return { token, user };
     },
+
     addProject: async (
       parent,
       { projectTitle, projectDescription },
@@ -59,6 +61,7 @@ const resolvers = {
         const project = await Project.create({
           projectTitle,
           projectDescription,
+
           projectAuthor: context.user.username,
         });
 
@@ -68,6 +71,22 @@ const resolvers = {
         );
 
         return project;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    addMember: async (parent, { projectId }, context) => {
+      if (context.user) {
+        return Project.findOneAndUpdate(
+          { _id: projectId },
+          {
+            $addToSet: {
+              projectMembers: {
+                memberId: context.user._id,
+                memberUsername: context.user.username,
+              },
+            },
+          }
+        );
       }
       throw new AuthenticationError("You need to be logged in!");
     },

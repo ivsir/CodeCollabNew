@@ -1,17 +1,18 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const projectSchema = new Schema({
   projectTitle: {
     type: String,
-    required: 'You need to leave a project title!',
+    required: "You need to leave a project title!",
     minlength: 1,
     maxlength: 280,
     trim: true,
   },
+
   projectDescription: {
     type: String,
-    required: 'You need to leave a description!',
+    required: "You need to leave a description!",
     minlength: 1,
     maxlength: 40000,
     trim: true,
@@ -21,6 +22,20 @@ const projectSchema = new Schema({
     required: true,
     trim: true,
   },
+
+  projectMembers: [
+    {
+      memberId: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+      },
+      memberUsername: {
+        type: String,
+      },
+    },
+  ],
+
   createdAt: {
     type: Date,
     default: Date.now,
@@ -47,6 +62,6 @@ const projectSchema = new Schema({
   ],
 });
 
-const Project = model('Project', projectSchema);
+const Project = model("Project", projectSchema);
 
 module.exports = Project;

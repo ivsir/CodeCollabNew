@@ -80,6 +80,7 @@ const FormContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-family: "Courier Prime", monospace;
     color: #4dc4d2;
     width: 160px;
@@ -94,15 +95,14 @@ const FormContainer = styled.div`
     background: #ffc442;
     margin-top: 20px;
     margin-bottom: 25px;
+
     box-shadow: 0px 7px 0px 0px #cf920d;
   }
-
   button:hover {
     box-shadow: none;
     transform: translateY(5px);
     transition: all 0.1s linear;
   }
-
   button:focus {
     outline: none;
   }
@@ -181,6 +181,9 @@ const ProjectForm = () => {
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
 
+  // const [characterCount, setCharacterCount] = useState(0);
+  // const [characterCount2, setCharacterCount2] = useState(0);
+
   const [addProject, { error }] = useMutation(ADD_PROJECT, {
     update(cache, { data: { addProject } }) {
       try {
@@ -245,6 +248,7 @@ const ProjectForm = () => {
                   name="projectTitle"
                   placeholder="Project Title..."
                   value={projectTitle}
+                  // className="form-input w-100"
                   style={{ lineHeight: "1.5", resize: "vertical" }}
                   onChange={handleChange}
                 ></textarea>
