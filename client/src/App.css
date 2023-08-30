@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+#muted-link{
+ padding: 20px !important;
+ font-size: 12px !important;
+ margin-top: 20px !important;
+}
+
+#small-text
+{
+  font-size: 12px;
+}
+
+
+#bold{
+  color: #175D8F;
+}
+
+#signup-container{
+  padding-bottom: 2em;
+}
+
+#signup-button{
+  padding: 15px;
+}
+
+#login-button{
+  margin-bottom: 20px !important;
+}
+
+.loader {
+  max-inline-size: 100%;
+}
+
