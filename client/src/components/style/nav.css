@@ -48,7 +48,7 @@ nav > .nav-btn {
 }
 
 nav > .nav-links {
-  display: inline;
+  display: flex;
   font-size: 18px;
 }
 
