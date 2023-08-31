@@ -40,7 +40,7 @@ const Nav = () => {
 
           {Auth.loggedIn() ? (
             <>
-              <a href="/profile">My Projects</a>
+              <a href="/profile">Profile</a>
               <a onClick={logout} href="/">
                 Logout
               </a>

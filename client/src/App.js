@@ -52,27 +52,6 @@ export const socket = io(URL, {
   autoConnect: false,
 });
 function App() {
-  // const [input, setInput] = useState("");
-  // const handleChange = (e) => {
-  //   setInput(e.target.value);
-  // };
-  // function chatSend(event) {
-  //   event.preventDefault();
-  //   console.log("submitted:", input);
-  //   if (input) {
-  //     socket.emit("chat message", input);
-  //     setInput("");
-  //   }
-  // }
-  // //  this is for the profile cards
-  // const [cards, setCards] = useState([
-  //   {
-  //     title: "What I learned from my visit to The Upside Down",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-  //     author: "Nancy Wheeler",
-  //   },
-  // ]);
   return (
     <ApolloProvider client={client}>
       <Nav />
