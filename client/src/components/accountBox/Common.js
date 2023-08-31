@@ -126,6 +126,16 @@ export const ExploreContainer = styled.div`
     box-shadow: 0 0 0.5rem var(--color-light-blue);
   }
 
+  h1 {
+    font-family: montserrat;
+    font-size: 2rem;
+    color: var(--color-yellow);
+    text-shadow: 0.1rem 0.1rem 0.25rem var(--color-bg);
+    text-align: center;
+    margin 1rem;
+  }
+
+
   .project__title {
     margin-top: 0.8rem;
     color: var(--color-yellow);
